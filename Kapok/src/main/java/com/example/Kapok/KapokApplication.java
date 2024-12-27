@@ -8,14 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @RestController
 public class KapokApplication {
-	
-	
-	@GetMapping
-	public String hello()
-	{
-		return "Hello world";
-	}
-	
+		
 	public static void main(String[] args) {
 		SpringApplication.run(KapokApplication.class, args);
 	}
