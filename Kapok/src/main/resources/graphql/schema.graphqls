@@ -10,3 +10,7 @@ type Donar{
 	Email: String,
 	Pwd: String
 }
+
+type Mutation{
+	addDonar(id: Int!, fName: String!, lName: String!, Email: String!, Pwd: String!): Boolean
+}
