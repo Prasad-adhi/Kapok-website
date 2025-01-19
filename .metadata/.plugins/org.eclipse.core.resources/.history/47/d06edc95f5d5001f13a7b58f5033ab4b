@@ -1,0 +1,22 @@
+package com.example.Kapok;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+
+@Configuration
+public class DynamoDBConfig {
+	
+	@Bean
+	public DynamoDBMapper dynamoDBMapper()
+	{
+		return new DynamoDBMapper(buildAmazonDynamoDB());
+	}
+
+	private AmazonDynamoDB buildAmazonDynamoDB() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

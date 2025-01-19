@@ -54,10 +54,30 @@
     	</dependency>
     	
     	<dependency>
+		    <groupId>com.opencsv</groupId>
+		    <artifactId>opencsv</artifactId>
+		    <version>5.8</version>
+		</dependency>
+    	
+    	
+    	<dependency>
 	        <groupId>com.graphql-java-kickstart</groupId>
 	        <artifactId>graphql-java-tools</artifactId>
 	        <version>11.1.0</version>
     	</dependency>
+    	
+    	<dependency>
+    		<groupId>com.amazonaws</groupId>
+    		<artifactId>aws-java-sdk-dynamodb</artifactId>
+    		<version>1.12.319</version>
+    	</dependency>
+    	
+    	<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.16.16</version>
+		    <scope>provided</scope>
+		</dependency>
     	
     	<dependency>
 		    <groupId>org.springframework.boot</groupId>
