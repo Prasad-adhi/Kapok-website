@@ -1,5 +1,6 @@
 package com.example.Kapok;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;
@@ -11,18 +12,33 @@ import java.util.Optional;
 
 @Controller
 public class DonarController {
-	@QueryMapping
-    public List<Donar> donars() {
-        return Donar.donars;
-    }
+//	@QueryMapping
+//    public List<Donar> donars() {
+//        return Donar.donars;
+//    }
+	
+	@Autowired
+	private DonarRepository donarRepository;
 	
     @QueryMapping
-    public Optional<Donar> donarbyID(@Argument Integer id) {
-        return Donar.getdonarById(id);
+    public Donar donarbyID(@Argument String donarID) {
+        return donarRepository.getDonarByID(donarID);
     }
     
     @MutationMapping
-    public boolean addDonar(@Argument Integer id, @Argument String fName, @Argument String lName, @Argument String Email, @Argument String Pwd) {
-    	return Donar.addDonar(id, fName, lName, Email, Pwd);
+    public Donar addDonar(@Argument Donar donar) {
+    	return donarRepository.save(donar);
+    }
+    
+    @MutationMapping
+    public String deleteDonar(@Argument String donarID)
+    {
+    	return donarRepository.delete(donarID);
+    }
+    
+    @MutationMapping
+    public String updateDonar(String donarID, Donar donar)
+    {
+    	return donarRepository.update(donarID, donar);
     }
 }

@@ -1,10 +1,9 @@
 type Query{
-	donars: [Donar]
-	donarbyID(id: Int): Donar
+	donarbyID(id: String): Donar
 }
 
 type Donar{
-	Id: ID,
+	Id: String,
 	fName: String,
 	lName: String,
 	Email: String,
@@ -12,5 +11,7 @@ type Donar{
 }
 
 type Mutation{
-	addDonar(id: Int!, fName: String!, lName: String!, Email: String!, Pwd: String!): Boolean
+	addDonar(donar: Donar!): Donar
+	deleteDonar(donarID: String!): String
+	updateDonar(donarID: String!, donar: Donar): String
 }

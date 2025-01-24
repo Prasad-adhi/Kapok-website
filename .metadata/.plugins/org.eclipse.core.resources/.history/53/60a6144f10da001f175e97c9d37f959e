@@ -1,0 +1,15 @@
+type Query{
+	donarbyID(id: String): Donar
+}
+
+type Donar{
+	Id: ID,
+	fName: String,
+	lName: String,
+	Email: String,
+	Pwd: String
+}
+
+type Mutation{
+	addDonar(id: Int!, fName: String!, lName: String!, Email: String!, Pwd: String!): Boolean
+}

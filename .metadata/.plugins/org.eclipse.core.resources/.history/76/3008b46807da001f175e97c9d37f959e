@@ -1,0 +1,24 @@
+package com.example.Kapok;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+
+@Repository
+public class DonarRepository {
+	
+	@Autowired
+	private DynamoDBMapper dynamoDBMapper;
+	
+	public Donar save(Donar donar)
+	{
+		dynamoDBMapper.save(donar);
+		return donar;
+	}
+	
+	public Donar getDonarByID(String donarId)
+	{
+		
+	}
+}
